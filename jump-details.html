@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMO Trickjump Viewer</title>
+    <link rel="icon" type="image/x-icon" href="./img/icon.jpg">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/jump_details.js"></script>
+</head>
+<body>
+    <div class="container-fluid d-flex" id="main">
+        <div class="row px-3 w-100">
+            <div class="col-12 text-center py-3">
+                <h1 id="title">SMO Trickjump Viewer</h1>
+            </div>
+            <div class="col-12">
+                <h2 id="jump-name"></h2>
+                <h5 id="jump-location"></h5>
+            </div>
+            <div class="col-xl-6">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <h5 id="jump-difficulty"></h5>
+                    </div>
+                    <div class="col-xl-12">
+                        <h5 id="jump-tier"></h5>
+                    </div>
+                    <div class="col-xl-12">
+                        <h5 id="jump-types"></h5>
+                    </div>
+                    <div class="col-xl-12">
+                        <h5 id="jump-finder"></h5>
+                    </div>
+                    <div class="col-xl-12">
+                        <h5 id="jump-prover"></h5>
+                    </div>
+                    <div class="col-xl-12 pb-2">
+                        <h5 id="jump-server"></h5>
+                    </div>
+                    <div class="col-12">
+                        <div class="embed-responsive" id="jump-vid-container">
+                            <div class="loading-spinner"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6">
+                <div class="h4 text-info pt-3" id="info-text">
+                </div>                  
+                <div>
+                    <h4 id="jump-extra" class="pb-2"></h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+</body>
+</html>

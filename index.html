@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMO Trickjump Viewer</title>
+    <link rel="icon" type="image/x-icon" href="./img/icon.jpg">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="container-fluid d-flex" id="main">
+        <div class="row px-3 w-100">
+            <div class="col-12 py-3 d-flex justify-content-center align-items-center position-relative">
+                <h1 id="title mx-auto">SMO Trickjump Viewer</h1>
+            </div>
+            <!-- Filters -->
+            <div class="col-md-4" id="filters-container">
+                <button id="toggle-filters" class="btn btn-primary w-100 d-md-none">Show Filters</button>
+                <div id="filters" class="filters-content mb-4 d-md-block">
+                    <div class="pb-4">
+                        <h2 class="fw-bold">Filters:</h2>
+                        <hr id="separator">
+                        <label for="auto-apply" class="form-label fw-bold pb-1">Auto Apply Filters: </label>
+                        <input type="checkbox" class="form-check-input ms-2" id="auto-apply" name="auto-apply" checked>
+                        <button id="apply-filters" class="btn btn-primary w-100 mb-2 fade-out" style="display: none;">Apply Filters</button>
+                        <div class="mb-3">
+                            <label for="name-filter" class="form-label" id="name-filter-label">Name:</label>
+                            <input type="text" class="form-control text-white" id="name-filter" name="name-filter" placeholder="Cascade Beans"/>
+                        </div>
+                        <div class="mb-3">
+                            <label for="location" class="form-label" id="location-filter-label">Location:</label>
+                            <div id="location-filter" class="filter-dropdown">All Locations (Default)</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="difficulty" class="form-label" id="difficulty-filter-label">Difficulty:</label>
+                            <div id="difficulty-filter" class="filter-dropdown">All Difficulties (Default)</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="tier" class="form-label" id="tier-filter-label">Tier:</label>
+                            <div id="tier-filter" class="filter-dropdown">All Tiers (Default)</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="type" class="form-label" id="type-filter-label">                
+                                <div class="tooltip-icon" data-direction="top">⚠️
+                                    <div class="tooltip-text">Use of this filter is not recommended due to incomplete implementation of jump types within jumpedia.</div>
+                                </div>
+                                Type:
+                            </label>
+                            <div id="type-filter" class="filter-dropdown">All Types (Default)</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="server" class="form-label" id="server-filter-label">Server:</label>
+                            <div id="server-filter" class="filter-dropdown">All Servers (Default)</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="finder-filter" class="form-label" id="finder-filter-label">
+                                <div class="tooltip-icon" data-direction="top">⚠️
+                                    <div class="tooltip-text">Not all jumps have a finder defined.</div>
+                                </div>
+                                Finder:
+                            </label>
+                            <input type="text" class="form-control text-white" id="finder-filter" name="finder-filter" placeholder="JoniKauf"/>
+                        </div>
+                        <div class="mb-3">
+                            <label for="prover-filter" class="form-label" id="prover-filter-label">
+                                <div class="tooltip-icon" data-direction="top">⚠️
+                                    <div class="tooltip-text">Not all jumps have a prover defined.</div>
+                                </div>
+                                Prover:
+                            </label>
+                            <input type="text" class="form-control text-white" id="prover-filter" name="prover-filter" placeholder="Gummy"/>
+                        </div>
+                        <button id="remove-filters" class="btn btn-danger w-100 mt-3">Remove all filters</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Trickjump table -->
+            <div class="col-md-8" id="main-content">
+            <table class="table table-striped table-dark">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th class="diff-col">Difficulty</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+                        <!-- main.js will append the data here -->
+                    </tbody>
+                </table>
+                <div id="pagination-controls" class="pagination-container pb-4">
+                    <a id="first-page" class="page-link" title="First Page">&laquo;</a>
+                    <a id="prev-page" class="page-link" title="Previous Page">&lt;</a>
+                    <span class="page-info">
+                        Page: <input type="number" id="page-number" class="page-input" value="1" min="1"/> of <span id="max-page">?</span>
+                    </span>
+                    <a id="next-page" class="page-link" title="Next Page">&gt;</a>
+                    <a id="last-page" class="page-link" title="Last Page">&raquo;</a>
+                </div>                                                          
+            </div>
+            <div class="col-12 pb-5">
+                <a href="https://discord.gg/CxqUN9E" target="_blank" class="discord-button">
+                    <img src="https://cdn.icon-icons.com/icons2/2108/PNG/512/discord_icon_130958.png" alt="Discord Logo" class="discord-logo">
+                    Join our community!
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
