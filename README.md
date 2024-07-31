@@ -1,1 +1,1 @@
-# Trickjump-Website
+# Trickjump Website
